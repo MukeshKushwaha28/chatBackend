@@ -43,6 +43,10 @@ app.use("/api/message", messageRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
+app.get("/",(req,res)=>{
+    res.send("server is running")
+})
+
 const PORT = process.env.PORT;
 
 const server = app.listen(
