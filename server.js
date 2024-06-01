@@ -40,12 +40,14 @@ app.use("/api/message", messageRoutes);
 // --------------------------deployment------------------------------
 
 // Error Handling middlewares
+
+app.get("/",(req,res)=>{
+  res.send("server is running")
+})
+
 app.use(notFound);
 app.use(errorHandler);
 
-app.get("/",(req,res)=>{
-    res.send("server is running")
-})
 
 const PORT = process.env.PORT;
 
